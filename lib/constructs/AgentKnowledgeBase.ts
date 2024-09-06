@@ -182,12 +182,7 @@ export class AgentKnowledgeBase extends Construct {
             resources: [
                 `arn:aws:s3:::${bucketName}/*`,
                 `arn:aws:s3:::${bucketName}`
-            ],
-            conditions: {
-                StringEquals: {
-                    'aws:SourceAccount': this.accountId
-                }
-            }
+            ]
         });
 
         this.kbRole.addToPolicy(s3AssetsAccessPolicyStatement);
